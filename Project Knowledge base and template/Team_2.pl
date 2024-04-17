@@ -27,3 +27,7 @@ proper_connection(Station_A, Station_B, Duration, Line):-
 proper_connection(Station_A, Station_B, Duration, Line):-
     unidirectional(Line) , 
     connection(Station_A, Station_B, Duration, Line).
+
+
+
+
