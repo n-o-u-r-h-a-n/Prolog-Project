@@ -19,3 +19,12 @@ day_slots(Group, Week, Day, S):-
 
 earliest_slot(Group, Week, Day, H):-
     day_slots(Group, Week, Day , [H|T]).
+
+proper_connection(Station_A, Station_B, Duration, Line):-
+    \+ unidirectional(Line) , 
+    ( connection(Station_A, Station_B, Duration, Line) ;
+    connection(Station_B, Station_A, Duration, Line) ).
+proper_connection(Station_A, Station_B, Duration, Line):-
+    unidirectional(Line) , 
+    connection(Station_A, Station_B, Duration, Line).
+
